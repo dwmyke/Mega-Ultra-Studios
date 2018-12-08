@@ -4,7 +4,10 @@
     --lightAccent: #f1e4b5;
     --dark: #32064a;
     --darkAccent: #687494;
-    --shadow: -12px 35px 49px -12px rgba(0,0,0,0.75);
+    --shadow: 2px 2px 2px rgba(28,110,164,0),
+    1px 1px 1px rgba(0,0,0,.5),
+    -1px -1px 1px rgba(255,255,255,.1),
+    2px 2px 2px rgba(28,110,164,0);
 }
 
 
@@ -30,10 +33,7 @@ body {
   "Segoe UI Emoji", "Segoe UI Symbol";
     background: radial-gradient(circle at 11.77% 60.98%, #232526, transparent 100%),radial-gradient(circle at 89.32% 17.70%, #414345, transparent 100%),radial-gradient(circle at 65.63% 67.38%, #a1a1a1, transparent 100%),radial-gradient(circle at 50% 50%, #ffffff, #ffffff 100%);
     color: var(--light);
-    text-shadow:
-    0px 4px 3px rgba(0,0,0,0.4),
-    0px 8px 13px rgba(0,0,0,0.1),
-    0px 18px 23px rgba(0,0,0,0.1);
+    text-shadow: var(--shadow);
     font-size: 100%;
 }
 
@@ -90,7 +90,7 @@ header {
 .button {
     display: inline-block;
     background: radial-gradient(circle at 1.98% 33.98%, #FF8008, transparent 100%),radial-gradient(circle at 98.02% 93.05%, #FFC837, transparent 100%),radial-gradient(circle at 50% 50%, #ffffff, #ffffff 100%);
-    border:.1em solid #3953aa;
+    border:.1em solid var(--darkAccent);
     border-radius: 5em;
     padding: .5em;
     margin: .5em;
