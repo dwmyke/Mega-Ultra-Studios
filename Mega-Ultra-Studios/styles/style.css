@@ -10,7 +10,7 @@
 
 html {
     min-height: 100%;
-    
+    line-height: 1.2;
 }
 
 body {
@@ -34,21 +34,35 @@ body {
     0px 4px 3px rgba(0,0,0,0.4),
     0px 8px 13px rgba(0,0,0,0.1),
     0px 18px 23px rgba(0,0,0,0.1);
+    font-size: 100%;
 }
 
 
 a {
     text-decoration: none;
     color: inherit;
+    font-family: inherit;
     font-size: inherit;
 }
 
 h1 {
     text-align: center;
+    margin-top: 0;
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+p {
+    font-size: 1.25em;
+    margin-bottom: 1.3em;
 }
 
 header {
     grid-area: header;
+    margin-top: 5%;
 }
 
 .content {
@@ -73,6 +87,17 @@ header {
     grid-area: buttons;
 }
 
+.button {
+    display: inline-block;
+    background: radial-gradient(circle at 1.98% 33.98%, #FF8008, transparent 100%),radial-gradient(circle at 98.02% 93.05%, #FFC837, transparent 100%),radial-gradient(circle at 50% 50%, #ffffff, #ffffff 100%);
+    border:.1em solid #3953aa;
+    border-radius: 5em;
+    padding: .5em;
+    margin: .5em;
+    color: var(--dark);
+    box-shadow: var(--shadow);
+}
+
 .video-container {
     grid-area: video;
     justify-content: center;
@@ -85,8 +110,9 @@ header {
     box-shadow: var(--shadow);
 }
 
-footer {
+.footer {
     grid-area: footer;
+    font-size: .65em;
 }
 
 .features {
@@ -115,9 +141,10 @@ footer {
     
 }
 
-@media only screen and (min-width: 500px){
+@media only screen and (min-width: 900px){
    .lfd {
        text-align: justify;
+       grid-gap: 2em;
       grid-template-columns: 1fr 1fr;
       grid-template-areas: 
     "title title"
@@ -126,12 +153,13 @@ footer {
    }
 }
 
-@media only screen and (min-width: 700px){
+@media only screen and (min-width: 1200px){
    .lfd {
        text-align: justify;
       grid-template-columns: 4fr 2fr 1fr;
-      grid-template-areas: 
-    "title video video"
+      grid-template-areas:
+      "header header header" 
+    "title title title"
     "description video video"
     "buttons video video"; 
    }
