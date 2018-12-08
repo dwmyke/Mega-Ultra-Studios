@@ -1,0 +1,138 @@
+:root {
+    --primary: #fcd02c;
+    --light: #dfe3e4;
+    --lightAccent: #f1e4b5;
+    --dark: #32064a;
+    --darkAccent: #687494;
+    --shadow: -12px 35px 49px -12px rgba(0,0,0,0.75);
+}
+
+
+html {
+    min-height: 100%;
+    
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "header"
+    "content"
+    "footer";
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+    background: radial-gradient(circle at 11.77% 60.98%, #232526, transparent 100%),radial-gradient(circle at 89.32% 17.70%, #414345, transparent 100%),radial-gradient(circle at 65.63% 67.38%, #a1a1a1, transparent 100%),radial-gradient(circle at 50% 50%, #ffffff, #ffffff 100%);
+    color: var(--light);
+    text-shadow:
+    0px 4px 3px rgba(0,0,0,0.4),
+    0px 8px 13px rgba(0,0,0,0.1),
+    0px 18px 23px rgba(0,0,0,0.1);
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+}
+
+h1 {
+    text-align: center;
+}
+
+header {
+    grid-area: header;
+}
+
+.content {
+    grid-area: content;
+    padding: 0 10%;
+}
+
+.title {
+    grid-area: title;
+}
+
+.description {
+    grid-area: description;
+    max-width: 100%;
+}
+
+.icon {
+    margin: 0 4px 0 0;
+}
+
+.btn-group {
+    grid-area: buttons;
+}
+
+.video-container {
+    grid-area: video;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    height: 0;
+    padding-top: 56%;
+    overflow: hidden;
+    max-width: 100%;
+    box-shadow: var(--shadow);
+}
+
+footer {
+    grid-area: footer;
+}
+
+.features {
+    background: url("../img/features.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.lfd {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "title"
+    "video"
+    "description"
+    "buttons";
+    justify-content: center;
+    align-content: start;
+    text-align: center;
+    
+}
+
+@media only screen and (min-width: 500px){
+   .lfd {
+       text-align: justify;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: 
+    "title title"
+    "description video"
+    "buttons buttons"; 
+   }
+}
+
+@media only screen and (min-width: 700px){
+   .lfd {
+       text-align: justify;
+      grid-template-columns: 4fr 2fr 1fr;
+      grid-template-areas: 
+    "title video video"
+    "description video video"
+    "buttons video video"; 
+   }
+}
